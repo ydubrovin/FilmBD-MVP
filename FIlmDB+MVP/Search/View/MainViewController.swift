@@ -39,12 +39,15 @@ extension MainViewController: MainViewProtocol{
     func succes() {
         tableView.reloadData()
     }
-    
     func failure(error: Error) {
         print(error.localizedDescription)
     }
-    
+}
 
-    
-    
+extension MainViewController: UITableViewDelegate{
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let infoComent = presenter.comments?[indexPath.row]
+        let detailVC = ModuleBuilder.createDetailInfoFilm(infoFilm: infoComent)
+        navigationController?.pushViewController(detailVC, animated: true)
+    }
 }

@@ -20,7 +20,6 @@ protocol MainViewPresenterProtocol: class {
 
 class SearchPresenter: MainViewPresenterProtocol{
     var comments: [InfoFilm]?
-    
     weak var view: MainViewProtocol?
     let networkService: NetworkServiceProtocol!
     
@@ -30,7 +29,7 @@ class SearchPresenter: MainViewPresenterProtocol{
         getComments()
     }
     func getComments() {
-        //print ("_______________________________")
+        print ("_______________________________")
         print("Presenter")
         var movies = [InfoFilm]()
         networkService.getComments{[weak self] result in
