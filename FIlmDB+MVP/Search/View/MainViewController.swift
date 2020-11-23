@@ -28,7 +28,8 @@ extension MainViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         let comment = presenter.comments?[indexPath.row]
-        cell.textLabel?.text = comment?.body
+        print(presenter.comments?.count ?? 0)
+        cell.textLabel?.text = comment?.title
         return cell
     }
     
