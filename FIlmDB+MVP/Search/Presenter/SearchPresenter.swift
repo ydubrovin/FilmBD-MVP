@@ -30,7 +30,7 @@ class SearchPresenter: MainViewPresenterProtocol{
         getComments()
     }
     func getComments() {
-        print ("_______________________________")
+        //print ("_______________________________")
         print("Presenter")
         var movies = [InfoFilm]()
         networkService.getComments{[weak self] result in
