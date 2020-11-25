@@ -11,17 +11,21 @@ protocol DatailInfoFilmViewProtocol:class {
     func setInfoFilm(infoFilm: InfoFilm?)
 }
 protocol DatailInfoFilmViewPresenterProtocol:class{
-    init(view: DatailInfoFilmViewProtocol, infoFilm: InfoFilm?)
+    init(view: DatailInfoFilmViewProtocol, router: RouterProtocol ,infoFilm: InfoFilm?)
     func setInfoFilm()
+    func tap()
 }
 
 class DatailInfoFilmPresenter: DatailInfoFilmViewPresenterProtocol {
+    
     var infoFilm: InfoFilm?
     weak var view: DatailInfoFilmViewProtocol?
+    var router: RouterProtocol?
     
-    required init(view: DatailInfoFilmViewProtocol, infoFilm: InfoFilm?) {
+    required init(view: DatailInfoFilmViewProtocol, router: RouterProtocol,  infoFilm: InfoFilm?) {
         self.view = view
         self.infoFilm = infoFilm
+        self.router = router
     }
     
     func setInfoFilm() {
@@ -29,4 +33,7 @@ class DatailInfoFilmPresenter: DatailInfoFilmViewPresenterProtocol {
     }
     
     
+    func tap() {
+        router?.popToRoot()
+    }
 }

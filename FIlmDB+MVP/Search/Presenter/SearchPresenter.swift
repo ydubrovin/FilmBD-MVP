@@ -13,18 +13,22 @@ protocol MainViewProtocol: class{
 }
 
 protocol MainViewPresenterProtocol: class {
-    init(view: MainViewProtocol, networkService: NetworkServiceProtocol)
+    init(view: MainViewProtocol, networkService: NetworkServiceProtocol, router: RouterProtocol)
     func getComments()
     var comments:[InfoFilm]? {get set}
+    func tapOnTheComment(infoFilm: InfoFilm?)
 }
 
 class SearchPresenter: MainViewPresenterProtocol{
+    
     var comments: [InfoFilm]?
     weak var view: MainViewProtocol?
     let networkService: NetworkServiceProtocol!
+    var router: RouterProtocol?
     
-    required init(view:MainViewProtocol, networkService: NetworkServiceProtocol) {
+    required init(view:MainViewProtocol, networkService: NetworkServiceProtocol, router: RouterProtocol) {
         self.view = view
+        self.router = router
         self.networkService = networkService
         getComments()
     }
@@ -65,5 +69,8 @@ class SearchPresenter: MainViewPresenterProtocol{
                 }
             }
         }
+    }
+    func tapOnTheComment(infoFilm: InfoFilm?) {
+        router?.showDetail(infoFilm: infoFilm)
     }
 }

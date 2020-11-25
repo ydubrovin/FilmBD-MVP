@@ -47,7 +47,6 @@ extension MainViewController: MainViewProtocol{
 extension MainViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let infoComent = presenter.comments?[indexPath.row]
-        let detailVC = ModuleBuilder.createDetailInfoFilm(infoFilm: infoComent)
-        navigationController?.pushViewController(detailVC, animated: true)
+        presenter.tapOnTheComment(infoFilm: infoComent)
     }
 }

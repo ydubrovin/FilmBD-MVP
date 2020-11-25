@@ -20,8 +20,12 @@
 		5B8CFA5325652E5C00E01E30 /* InfoFilm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8CFA5225652E5C00E01E30 /* InfoFilm.swift */; };
 		5B8CFA5825652FFE00E01E30 /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8CFA5725652FFE00E01E30 /* SearchPresenter.swift */; };
 		5B8CFA7025653B5D00E01E30 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B8CFA6F25653B5D00E01E30 /* MainViewController.xib */; };
-		5B8CFA7D2565466F00E01E30 /* ModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8CFA7C2565466F00E01E30 /* ModuleBuilder.swift */; };
+		5B8CFA7D2565466F00E01E30 /* AssemblyModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8CFA7C2565466F00E01E30 /* AssemblyModuleBuilder.swift */; };
 		5B8CFA9425667FF100E01E30 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8CFA9325667FF100E01E30 /* NetworkService.swift */; };
+		5B8CFAAF256BECD700E01E30 /* DatailInfoFilmPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8CFAAE256BECD700E01E30 /* DatailInfoFilmPresenter.swift */; };
+		5B8CFAD2256C028600E01E30 /* DetailInfoFilmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8CFAD0256C028600E01E30 /* DetailInfoFilmViewController.swift */; };
+		5B8CFAD3256C028600E01E30 /* DetailInfoFilmViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B8CFAD1256C028600E01E30 /* DetailInfoFilmViewController.xib */; };
+		5B8CFAE7256E69F100E01E30 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8CFAE6256E69F100E01E30 /* Router.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,8 +66,12 @@
 		5B8CFA5225652E5C00E01E30 /* InfoFilm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoFilm.swift; sourceTree = "<group>"; };
 		5B8CFA5725652FFE00E01E30 /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
 		5B8CFA6F25653B5D00E01E30 /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
-		5B8CFA7C2565466F00E01E30 /* ModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBuilder.swift; sourceTree = "<group>"; };
+		5B8CFA7C2565466F00E01E30 /* AssemblyModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssemblyModuleBuilder.swift; sourceTree = "<group>"; };
 		5B8CFA9325667FF100E01E30 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		5B8CFAAE256BECD700E01E30 /* DatailInfoFilmPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatailInfoFilmPresenter.swift; sourceTree = "<group>"; };
+		5B8CFAD0256C028600E01E30 /* DetailInfoFilmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInfoFilmViewController.swift; sourceTree = "<group>"; };
+		5B8CFAD1256C028600E01E30 /* DetailInfoFilmViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailInfoFilmViewController.xib; sourceTree = "<group>"; };
+		5B8CFAE6256E69F100E01E30 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		F04DC7FC30C8098DE99972C2 /* Pods-FIlmDB+MVP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FIlmDB+MVP.release.xcconfig"; path = "Target Support Files/Pods-FIlmDB+MVP/Pods-FIlmDB+MVP.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -138,8 +146,10 @@
 			children = (
 				5B4954D42563D07F00A3F3EC /* AppDelegate.swift */,
 				5B4954D62563D07F00A3F3EC /* SceneDelegate.swift */,
-				5B8CFA7C2565466F00E01E30 /* ModuleBuilder.swift */,
+				5B8CFA7C2565466F00E01E30 /* AssemblyModuleBuilder.swift */,
 				5B8CFA9325667FF100E01E30 /* NetworkService.swift */,
+				5B8CFAE6256E69F100E01E30 /* Router.swift */,
+				5B8CFAB4256BECE900E01E30 /* DatailInfoFilm */,
 				5B8CFA5F25653A3700E01E30 /* Search */,
 				5B4954DA2563D07F00A3F3EC /* Main.storyboard */,
 				5B4954DD2563D08000A3F3EC /* Assets.xcassets */,
@@ -200,6 +210,32 @@
 				5B8CFA5725652FFE00E01E30 /* SearchPresenter.swift */,
 			);
 			path = Presenter;
+			sourceTree = "<group>";
+		};
+		5B8CFAB3256BECE100E01E30 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				5B8CFAAE256BECD700E01E30 /* DatailInfoFilmPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		5B8CFAB4256BECE900E01E30 /* DatailInfoFilm */ = {
+			isa = PBXGroup;
+			children = (
+				5B8CFAB3256BECE100E01E30 /* Presenter */,
+				5B8CFABF256BF06400E01E30 /* View */,
+			);
+			path = DatailInfoFilm;
+			sourceTree = "<group>";
+		};
+		5B8CFABF256BF06400E01E30 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5B8CFAD0256C028600E01E30 /* DetailInfoFilmViewController.swift */,
+				5B8CFAD1256C028600E01E30 /* DetailInfoFilmViewController.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -309,6 +345,7 @@
 			files = (
 				5B4954E12563D08000A3F3EC /* LaunchScreen.storyboard in Resources */,
 				5B4954DE2563D08000A3F3EC /* Assets.xcassets in Resources */,
+				5B8CFAD3256C028600E01E30 /* DetailInfoFilmViewController.xib in Resources */,
 				5B8CFA7025653B5D00E01E30 /* MainViewController.xib in Resources */,
 				5B8CFA472563DE3300E01E30 /* Podfile in Resources */,
 				5B4954DC2563D07F00A3F3EC /* Main.storyboard in Resources */,
@@ -380,10 +417,13 @@
 			files = (
 				5B4954D92563D07F00A3F3EC /* MainViewController.swift in Sources */,
 				5B8CFA5325652E5C00E01E30 /* InfoFilm.swift in Sources */,
+				5B8CFAE7256E69F100E01E30 /* Router.swift in Sources */,
 				5B8CFA5825652FFE00E01E30 /* SearchPresenter.swift in Sources */,
+				5B8CFAD2256C028600E01E30 /* DetailInfoFilmViewController.swift in Sources */,
+				5B8CFAAF256BECD700E01E30 /* DatailInfoFilmPresenter.swift in Sources */,
 				5B4954D52563D07F00A3F3EC /* AppDelegate.swift in Sources */,
 				5B4954D72563D07F00A3F3EC /* SceneDelegate.swift in Sources */,
-				5B8CFA7D2565466F00E01E30 /* ModuleBuilder.swift in Sources */,
+				5B8CFA7D2565466F00E01E30 /* AssemblyModuleBuilder.swift in Sources */,
 				5B8CFA9425667FF100E01E30 /* NetworkService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

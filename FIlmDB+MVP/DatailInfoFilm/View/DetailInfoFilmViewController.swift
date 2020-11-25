@@ -15,6 +15,9 @@ class DetailInfoFilmViewController: UIViewController {
         super.viewDidLoad()
         presenter.setInfoFilm()
     }
+    @IBAction func tapAction(_ sender: Any) {
+        presenter.tap()
+    }
 }
 
 extension DetailInfoFilmViewController: DatailInfoFilmViewProtocol{
