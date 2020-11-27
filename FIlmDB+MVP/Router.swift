@@ -10,6 +10,7 @@ import UIKit
 protocol RouterMain {
     var navigationController: UINavigationController?{ get set}
     var assemlyBuilder: AssemblyBuilderProtocol? {get set}
+    var tabBarController: UITabBarController? {get set}
 }
 
 protocol RouterProtocol: RouterMain{
@@ -21,17 +22,31 @@ protocol RouterProtocol: RouterMain{
 class Router: RouterProtocol{
     var navigationController: UINavigationController?
     var assemlyBuilder: AssemblyBuilderProtocol?
+    var tabBarController: UITabBarController?
     
-    init(navigationController: UINavigationController,assemlyBuilder: AssemblyBuilderProtocol ) {
-        self.navigationController = navigationController
+    init(tabBarController:UITabBarController,assemlyBuilder: AssemblyBuilderProtocol ) {
+        self.navigationController = UINavigationController()
+        self.tabBarController = tabBarController
         self.assemlyBuilder = assemlyBuilder
     }
     
     func initialViewController() {
-        if let navigationController = navigationController{
-            guard let mainViewController = assemlyBuilder?.createmain(router: self) else { return }
-            navigationController.viewControllers = [mainViewController]
+//        if let navigationController = navigationController{
+//            guard let mainViewController = assemlyBuilder?.createmain(router: self) else { return }
+//            navigationController.viewControllers = [mainViewController]
+//        }
+        if let tabBar = tabBarController{
+            guard let firstVC = assemlyBuilder?.createmain(router: self) else {return}
+            guard let secondVC = assemlyBuilder?.createFavorite(router: self) else {return}
+            secondVC.loadViewIfNeeded()
+            firstVC.tabBarItem = UITabBarItem(tabBarSystemItem: .contacts, tag: 0)
+            secondVC.tabBarItem = UITabBarItem(tabBarSystemItem: .contacts, tag: 1)
+            if let navigation = navigationController{
+                navigation.pushViewController(firstVC, animated: true)
+                tabBarController?.setViewControllers([navigation,UINavigationController(rootViewController: secondVC)], animated: true)
+            }
         }
+        
     }
     
     func showDetail(infoFilm: InfoFilm?) {

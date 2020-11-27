@@ -19,12 +19,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        
         let navBar = UINavigationController()
+        let tabBar = UITabBarController()
         let assemblyBuilder = AssemblyModuleBuilder()
-        let router = Router(navigationController: navBar, assemlyBuilder: assemblyBuilder)
+        let router = Router(tabBarController: tabBar, assemlyBuilder: assemblyBuilder)
         router.initialViewController()
-        window?.rootViewController = navBar
+        window?.rootViewController = tabBar
         window?.makeKeyAndVisible()
     }
 

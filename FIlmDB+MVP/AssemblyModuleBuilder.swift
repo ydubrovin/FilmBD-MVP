@@ -11,9 +11,17 @@ import UIKit
 protocol AssemblyBuilderProtocol{
     func createmain(router: RouterProtocol) -> UIViewController
     func createDetailInfoFilm(infoFilm: InfoFilm?,router: RouterProtocol) -> UIViewController
+    func createFavorite(router: RouterProtocol)-> UIViewController
 }
 
 class AssemblyModuleBuilder: AssemblyBuilderProtocol{
+    func createFavorite(router: RouterProtocol) -> UIViewController {
+        let view = FavoritesViewController()
+        let presenter = FavoritesPresenter(view: view, router: router)
+        view.presenter = presenter
+        return view
+    }
+    
     
     
     func createmain(router: RouterProtocol) -> UIViewController {
