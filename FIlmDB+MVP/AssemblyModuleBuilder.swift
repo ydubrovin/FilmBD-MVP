@@ -33,7 +33,8 @@ class AssemblyModuleBuilder: AssemblyBuilderProtocol{
     }
     func createDetailInfoFilm(infoFilm: InfoFilm?, router: RouterProtocol) -> UIViewController {
         let view = DetailInfoFilmViewController()
-        let presenter = DatailInfoFilmPresenter(view: view, router: router, infoFilm: infoFilm)
+        let dataBase = DataBase()
+        let presenter = DatailInfoFilmPresenter(view: view, router: router, infoFilm: infoFilm,dataBase: dataBase)
         view.presenter = presenter
         return view
     }

@@ -29,6 +29,8 @@
 		5B8CFC30257159F300E01E30 /* FavouritesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8CFC2F257159F300E01E30 /* FavouritesPresenter.swift */; };
 		5B8CFC502571608400E01E30 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8CFC4E2571608400E01E30 /* FavoritesViewController.swift */; };
 		5B8CFC512571608400E01E30 /* FavoritesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B8CFC4F2571608400E01E30 /* FavoritesViewController.xib */; };
+		5B8CFC61257552B700E01E30 /* DataBaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8CFC60257552B700E01E30 /* DataBaseService.swift */; };
+		5B8CFC662575557900E01E30 /* DataBaseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8CFC652575557900E01E30 /* DataBaseObject.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +80,8 @@
 		5B8CFC2F257159F300E01E30 /* FavouritesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesPresenter.swift; sourceTree = "<group>"; };
 		5B8CFC4E2571608400E01E30 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		5B8CFC4F2571608400E01E30 /* FavoritesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoritesViewController.xib; sourceTree = "<group>"; };
+		5B8CFC60257552B700E01E30 /* DataBaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseService.swift; sourceTree = "<group>"; };
+		5B8CFC652575557900E01E30 /* DataBaseObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseObject.swift; sourceTree = "<group>"; };
 		F04DC7FC30C8098DE99972C2 /* Pods-FIlmDB+MVP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FIlmDB+MVP.release.xcconfig"; path = "Target Support Files/Pods-FIlmDB+MVP/Pods-FIlmDB+MVP.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -154,6 +158,8 @@
 				5B4954D62563D07F00A3F3EC /* SceneDelegate.swift */,
 				5B8CFA7C2565466F00E01E30 /* AssemblyModuleBuilder.swift */,
 				5B8CFA9325667FF100E01E30 /* NetworkService.swift */,
+				5B8CFC60257552B700E01E30 /* DataBaseService.swift */,
+				5B8CFC652575557900E01E30 /* DataBaseObject.swift */,
 				5B8CFAE6256E69F100E01E30 /* Router.swift */,
 				5B8CFAB4256BECE900E01E30 /* DatailInfoFilm */,
 				5B8CFA5F25653A3700E01E30 /* Search */,
@@ -454,7 +460,9 @@
 				5B8CFAE7256E69F100E01E30 /* Router.swift in Sources */,
 				5B8CFA5825652FFE00E01E30 /* SearchPresenter.swift in Sources */,
 				5B8CFAD2256C028600E01E30 /* DetailInfoFilmViewController.swift in Sources */,
+				5B8CFC662575557900E01E30 /* DataBaseObject.swift in Sources */,
 				5B8CFAAF256BECD700E01E30 /* DatailInfoFilmPresenter.swift in Sources */,
+				5B8CFC61257552B700E01E30 /* DataBaseService.swift in Sources */,
 				5B4954D52563D07F00A3F3EC /* AppDelegate.swift in Sources */,
 				5B8CFC30257159F300E01E30 /* FavouritesPresenter.swift in Sources */,
 				5B4954D72563D07F00A3F3EC /* SceneDelegate.swift in Sources */,
