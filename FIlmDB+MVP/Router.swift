@@ -39,8 +39,8 @@ class Router: RouterProtocol{
             guard let firstVC = assemlyBuilder?.createmain(router: self) else {return}
             guard let secondVC = assemlyBuilder?.createFavorite(router: self) else {return}
             secondVC.loadViewIfNeeded()
-            firstVC.tabBarItem = UITabBarItem(tabBarSystemItem: .contacts, tag: 0)
-            secondVC.tabBarItem = UITabBarItem(tabBarSystemItem: .contacts, tag: 1)
+            firstVC.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 0)
+            secondVC.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 1)
             if let navigation = navigationController{
                 navigation.pushViewController(firstVC, animated: true)
                 tabBarController?.setViewControllers([navigation,UINavigationController(rootViewController: secondVC)], animated: true)

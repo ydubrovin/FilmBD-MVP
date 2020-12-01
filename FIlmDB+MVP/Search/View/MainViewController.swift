@@ -16,7 +16,7 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         // Do any additional setup after loading the view.
-        self.title = "FirstVS"
+        self.title = "Поиск"
     }
 
 }
@@ -35,6 +35,8 @@ extension MainViewController: UITableViewDataSource{
     }
     
     
+    
+    
 }
 extension MainViewController: MainViewProtocol{
     func succes() {
@@ -50,4 +52,5 @@ extension MainViewController: UITableViewDelegate{
         let infoComent = presenter.comments?[indexPath.row]
         presenter.tapOnTheComment(infoFilm: infoComent)
     }
+    
 }

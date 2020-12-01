@@ -17,7 +17,8 @@ protocol AssemblyBuilderProtocol{
 class AssemblyModuleBuilder: AssemblyBuilderProtocol{
     func createFavorite(router: RouterProtocol) -> UIViewController {
         let view = FavoritesViewController()
-        let presenter = FavoritesPresenter(view: view, router: router)
+        let dataBase = DataBase()
+        let presenter = FavoritesPresenter(view: view, router: router, dataBase: dataBase)
         view.presenter = presenter
         return view
     }

@@ -67,7 +67,7 @@
 		5B4954F22563D08100A3F3EC /* FIlmDB+MVPUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "FIlmDB+MVPUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B4954F62563D08100A3F3EC /* FIlmDB_MVPUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FIlmDB_MVPUITests.swift; sourceTree = "<group>"; };
 		5B4954F82563D08100A3F3EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5B8CFA462563DE3300E01E30 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		5B8CFA462563DE3300E01E30 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		5B8CFA5225652E5C00E01E30 /* InfoFilm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoFilm.swift; sourceTree = "<group>"; };
 		5B8CFA5725652FFE00E01E30 /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
 		5B8CFA6F25653B5D00E01E30 /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };

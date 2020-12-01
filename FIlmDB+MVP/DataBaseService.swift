@@ -12,9 +12,9 @@ import SQLite
 protocol DataBaseProtocol{
     func saveData(infoFilm:InfoFilm)
     func deleteAllData()
-    func deleteOneData()
+    func deleteOneData(deleteID:Int64)
     //func createTable()
-    func getData()->InfoFilm
+    func getData()->[InfoFilm]
 }
 
 class DataBase: DataBaseProtocol{
@@ -37,7 +37,7 @@ class DataBase: DataBaseProtocol{
         } catch  {
             print("error")
         }
-        //createTable()
+        createTable()
     }
     
     func saveData(infoFilm:InfoFilm) {
@@ -59,8 +59,15 @@ class DataBase: DataBaseProtocol{
         }
     }
     
-    func deleteOneData() {
-        self
+    func deleteOneData(deleteID:Int64) {
+        do {
+            let db = try Connection("\(path)/db.sqlite3")
+            self.database = db
+            let alice = movies.filter(idMovie == deleteID)
+            try db.run(alice.delete())
+        } catch  {
+            print("error")
+        }
     }
     
     func createTable() {
@@ -76,19 +83,21 @@ class DataBase: DataBaseProtocol{
         }
     }
     
-    func getData() -> InfoFilm {
-        var infoFilm: InfoFilm?
+    func getData() -> [InfoFilm] {
+        var infoFilm: [InfoFilm]?
+        var bufmovies = [InfoFilm]()
         do {
             let db = try Connection("\(path)/db.sqlite3")
             self.database = db
             for user in try self.database.prepare(movies) {
                 print("id: \(user[idMovie]), email: \(user[titleMovie]), name: \(user[overviewMovie]),id: \(user[voteAverageMovie])")
-                // id: 1, email: alice@mac.com, name: Optional("Alice")
-                infoFilm = InfoFilm(voteCount: 1000 , id: Int(user[idMovie]), video: false, voteAverage: user[voteAverageMovie], title: user[titleMovie], popularity: 1.00000, posterPath: "nil", originalLanguage: "nil", originalTitle: "nil", backdropPath: "nel", adult: false, overview: user[overviewMovie], releaseDate: "nil")
+                bufmovies.append(InfoFilm(voteCount: 1000 , id: Int(user[idMovie]), video: false, voteAverage: user[voteAverageMovie], title: user[titleMovie], popularity: 1.00000, posterPath: "nil", originalLanguage: "nil", originalTitle: "nil", backdropPath: "nel", adult: false, overview: user[overviewMovie], releaseDate: "nil"))
             }
         } catch  {
             print("error")
         }
+        infoFilm = bufmovies
+        //MARK: infoFilm! не безопасно
         return infoFilm!
     }
 }
